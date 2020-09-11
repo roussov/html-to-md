@@ -28,7 +28,8 @@ function ssmtp_install(){
     read -p "Avez-vous déjà installé le module ssmtp [essentiel au serveur] ?: [Y,y / N,n]" yn
     case $yn in
         [Yy]* ) mail-config ;;
-        [Nn]* ) $ssmtp_install ;;
+        [Nn]* ) $ssmtp_install 
+                mail-config ;;
          * ) echo "Répondez par oui ou par non";;
     esac
 done

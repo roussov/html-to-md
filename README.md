@@ -1,7 +1,7 @@
 
 # Weather for Jacky! (scripts en développement)
 Extraire les données d'un site météo quelconque et d'envoyer le résultat sous forme de courrier au déstinataire de son choix...
-Oui c'est possible et sans l'intervention de Python!
+
 
 ## Installation
 

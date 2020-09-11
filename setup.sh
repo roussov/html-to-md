@@ -8,9 +8,9 @@ function dependencies(){
     while true; do
     read -p "Avez-vous déjà installer les dépendances python [essentiels au script] ?: [Y,y / N,n]" yn
     case $yn in
-        [Yy]* ) ssmtp_install ;;
+        [Yy]* ) sendmail_install ;;
         [Nn]* ) pip install -r requirements.txt 
-                ssmtp_install ;;
+                sendmail_install ;;
         * ) echo "Répondez par oui ou par non";;
     esac
 
@@ -20,15 +20,15 @@ done
 
 } 
 
-function ssmtp_install(){
-    echo "Configuration du module ssmtp"
+function sendmail_install(){
+    echo "Configuration du module sendmail"
     echo "============================="
     clear
      while true; do
-    read -p "Avez-vous déjà installé le module ssmtp [essentiel au serveur] ?: [Y,y / N,n]" yn
+    read -p "Avez-vous déjà installé le module sendmail [essentiel au serveur] ?: [Y,y / N,n]" yn
     case $yn in
         [Yy]* ) mail-config ;;
-        [Nn]* ) $ssmtp_install 
+        [Nn]* ) $sendmail_install 
                 mail-config ;;
          * ) echo "Répondez par oui ou par non";;
     esac
@@ -39,19 +39,10 @@ clear
 function mail-config() {
     echo "Initialisation Du serveur"
     echo "============================="
-    
-    clear
-    cd /usr/sbin/sendmail
-    time 1
-    ls -la
-    clear
+    sudo sendmailconfig
     echo "Configurez votre serveur avec vos infos"
-    nano $conf_ssmtp_conf
-    chmod 600 $conf_ssmtp_conf
-    #securisation des données 
-    nano $etc/ssmtp/revaliases
-    sudo apt-get install mailutils
-
+    sudo service apache2 restart
+    
 }
 
 function start-service(){
@@ -62,11 +53,7 @@ function start-service(){
 
 
 function main(){
-
-    ssmtp_install=sudo apt-get install ssmtp
-    conf_ssmtp_conf=/etc/ssmtp/ssmtp.conf
-    conf_ssmtp_revaliases=etc/ssmtp/revaliases
-
+    sendmail_install=sudo apt-get install sendmail
     dependencies
     start-service   
 }

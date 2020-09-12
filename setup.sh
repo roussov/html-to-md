@@ -27,25 +27,18 @@ function sendmail_install(){
      while true; do
     read -p "Avez-vous déjà installé le module sendmail [essentiel au serveur] ?: [Y,y / N,n]" yn
     case $yn in
-        [Yy]* ) mail-config ;;
+        [Yy]* ) start-service ;;
         [Nn]* ) $sendmail_install 
-                mail-config ;;
+                start-service ;;
          * ) echo "Répondez par oui ou par non";;
     esac
 done
 clear
 
 }
-function mail-config() {
-    echo "Initialisation Du serveur"
-    echo "============================="
-    sudo sendmailconfig
-    echo "Configurez votre serveur avec vos infos"
-    sudo service apache2 restart
-    
-}
 
 function start-service(){
+    sudo service apache2 restart
     python weather.py
     ./email.sh   
 }

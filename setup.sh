@@ -40,7 +40,7 @@ clear
 function start-service(){
     sudo sendmailconfig
     sudo service apache2 restart
-    python weather.py
+    python news.py
     ./email.sh   
 }
 

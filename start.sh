@@ -10,7 +10,7 @@ function test{
          * ) echo "Répondez par oui ou par non";;
     esac
 done
-function _news {
+function _news (){
     python3 news.py
     ./email.sh
 }

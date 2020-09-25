@@ -8,9 +8,9 @@ function dependencies(){
     while true; do
     read -p "Avez-vous déjà installer les dépendances python [essentiels au script] ?: [Y,y / N,n]" yn
     case $yn in
-        [Yy]* ) sendmail_install ;;
-        [Nn]* ) pip install -r requirements.txt 
-                sendmail_install ;;
+        [Yy]* ) sendmail_config ;;
+        [Nn]* ) pip3 install -r requirements.txt 
+        
         * ) echo "Répondez par oui ou par non";;
     esac
 
@@ -20,7 +20,7 @@ done
 
 } 
 
-function sendmail_install(){
+function sendmail_config(){
     echo "Configuration du module sendmail"
     echo "============================="
     clear
@@ -39,9 +39,7 @@ clear
 
 function start-service(){
     sudo sendmailconfig
-    sudo service apache2 restart
-    python weather.py
-    ./email.sh   
+    sudo service apache2 restart 
 }
 
 

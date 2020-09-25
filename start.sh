@@ -1,19 +1,23 @@
 #!/bin/bash
 #start.sh
 
-
-function os_program(){
-    echo "Bienvenue / Nous allons tester la compatibilité du système"
-    if [[ "$OSTYPE" =~ ^linux-gnu ]]; then
-        echo "Votre système est compatible"
-    else
-        echo "Votre système est incompatible"
-    fi
+function test{
+    while true; do
+    read -p "Avez-vous déjà installé le module sendmail [essentiel au serveur] ?: [Y,y / N,n]" yn
+    case $yn in
+        [Yy]* ) _news ;;
+        [Nn]* ) ./setup.sh;;
+         * ) echo "Répondez par oui ou par non";;
+    esac
+done
+function _news {
+    python3 news.py
+    ./email.sh
 }
+
 function main(){
-    os-os_program 
+    _test
+    _news
+    
 }
-
-
-
 main

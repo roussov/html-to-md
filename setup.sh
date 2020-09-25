@@ -5,7 +5,7 @@ function dependencies(){
     echo "Dépendances du programme"
     echo "==========================="
     while true; do
-    read -p "Avez-vous déjà installer les dépendances python [essentiels au script] ?: [Y,y / N,n]" yn
+    read -p "Avez-vous déjà installé les dépendances python [essentiels au script] ?: [Y,y / N,n]" yn
     case $yn in
         [Yy]* ) sendmail_config ;;
         [Nn]* ) pip3 install -r requirements.txt 

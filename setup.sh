@@ -9,14 +9,10 @@ function dependencies(){
     case $yn in
         [Yy]* ) sendmail_config ;;
         [Nn]* ) pip3 install -r requirements.txt 
-
-        * ) echo "Répondez par oui ou par non";;
+                sendmail_config ;;
+         * ) echo "Répondez par oui ou par non";;
     esac
-
 done
-
-
-
 } 
 
 function sendmail_config(){

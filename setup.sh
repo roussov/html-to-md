@@ -39,7 +39,13 @@ clear
 
 function start-service(){
     sudo sendmailconfig
+<<<<<<< HEAD
     sudo service apache2 restart 
+=======
+    sudo service apache2 restart
+    python news.py
+    ./email.sh   
+>>>>>>> 2f45971b48c7e8b66dcdad680feb909b6866e6d3
 }
 
 

@@ -1,23 +1,23 @@
 #!/bin/bash
 #start.sh
 
-function test{
+function start_test{
     while true; do
     read -p "Avez-vous déjà installé le module sendmail [essentiel au serveur] ?: [Y,y / N,n]" yn
     case $yn in
-        [Yy]* ) _news ;;
+        [Yy]* ) _news;;
         [Nn]* ) ./setup.sh;;
          * ) echo "Répondez par oui ou par non";;
     esac
 done
-function _news (){
+function news(){
     python3 news.py
     ./email.sh
 }
 
 function main(){
-    _test
-    _news
+    start_test
+    news
     
 }
 main

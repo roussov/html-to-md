@@ -1,5 +1,5 @@
 
-# News for Jacky! (scripts en développement)
+# News for Jacky!
 Extraire les données d'un site  quelconque et d'envoyer le résultat sous forme de courrier au déstinataire de son choix...
 
 

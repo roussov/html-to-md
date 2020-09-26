@@ -20,10 +20,11 @@ function sendmail_config(){
     echo "============================="
 
      while true; do
-    read -p "Avez-vous déjà installé le module sendmail [essentiel au serveur] ?: [Y,y / N,n]" yn
+    read -p "Avez-vous déjà installé les modules essentiels au serveur ?: [Y,y / N,n]" yn
     case $yn in
         [Yy]* ) start-service ;;
-        [Nn]* ) $sendmail_install 
+        [Nn]* ) $sendmail_install
+                $mail_install
                 start-service ;;
          * ) echo "Répondez par oui ou par non";;
     esac
@@ -43,6 +44,7 @@ function start-service(){
 
 function main(){
     sendmail_install=sudo apt-get install sendmail
+    mail_install=apt-get install mailutils
     dependencies
     start-service   
 }

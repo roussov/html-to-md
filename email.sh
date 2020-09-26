@@ -14,8 +14,7 @@ mv news.txt $news_today
 /etc/init.d/sendmail start
 read -p "Entrez l'adresse email du destinataire: " TO
 read -p "Entrez le sujet: " subject
-read -p "Entrez le message: " message
-echo $message | mutt -x -a $news_today -s $subject $TO
+tail -100 $news_today | mail -s $subject $TO
 mailq
 
 

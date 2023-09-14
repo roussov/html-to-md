@@ -1,4 +1,4 @@
-#!usr/bin/env python3.7
+#!usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
 
@@ -28,7 +28,7 @@ def welcome():
         +-----------------------------------------+
         |                                         | 
        https://github.com/vincentrs92/News-for-Jacky   
- 	    |                                         |
+ 	|                                         |
         +=========================================+
         |..........  News for Jacky    ...........|
         +-----------------------------------------+\n\n

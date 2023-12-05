@@ -27,7 +27,7 @@ def welcome():
         |..........   News for Jacky   ...........|
         +-----------------------------------------+
         |                                         | 
-       https://github.com/vincentrs92/News-for-Jacky   
+       	https://github.com/roussov/News-for-Jacky   
  	|                                         |
         +=========================================+
         |..........  News for Jacky    ...........|

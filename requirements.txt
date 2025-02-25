@@ -1,4 +1,4 @@
-markdown
-requests
-beautifulsoup
 bs4
+requests
+markdownify
+beautifulsoup

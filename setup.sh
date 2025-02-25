@@ -127,6 +127,7 @@ function main(){
     mail_install=apt-get install mailutils
     dependencies
     start-service
+    exit 0
 
 }
 

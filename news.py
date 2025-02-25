@@ -1,39 +1,30 @@
-#!usr/bin/env python3
-# -*- coding: UTF-8 -*-
-
-
-from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup as soup
-import os.path
 import requests
+from bs4 import BeautifulSoup
+from markdownify import markdownify as md
 
+# Fonction pour récupérer le contenu HTML à partir d'une URL
+def fetch_html(url):
+    response = requests.get(url)
+    response.raise_for_status()  # Raise an error for bad responses
+    return response.text
 
+# Fonction pour convertir du HTML en Markdown
+def convert_html_to_markdown(html):
+    return md(html)
 
-def main():
-    url = "https://www.francetvinfo.fr/"
-    req = Request(url , headers={'User-Agent': 'Mozilla/5.0'})
-    webpage = urlopen(req).read()
-    page_soup = soup(webpage, "html.parser")
-    title = page_soup.find("title")
-    containers = page_soup.findAll("p")
-    with open('news.txt','w+') as file:
-        file.write(str(title) + '\n')
-        file.write(str(containers) + '\n')
-    welcome()
+# URL de la page que vous souhaitez convertir
+print("exemple https://example.com")
+print("===========================")
+url = input("choix de l'url \n")
+print("===========================")
 
-def welcome():
-	    welcome = """
-        +=========================================+
-        |..........   News for Jacky   ...........|
-        +-----------------------------------------+
-        |                                         | 
-       	https://github.com/roussov/News-for-Jacky   
- 	|                                         |
-        +=========================================+
-        |..........  News for Jacky    ...........|
-        +-----------------------------------------+\n\n
-"""
+# Récupérer le HTML et le convertir en Markdown
+try:
+    html_content = fetch_html(url)
+    markdown_content = convert_html_to_markdown(html_content)
 
+    # Output the Markdown content
+    print(markdown_content)
 
-if __name__ == '__main__':
-	main()
+except Exception as e:
+    print(f"An error occurred: {e}")

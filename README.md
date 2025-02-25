@@ -30,8 +30,8 @@ ou
 python news.py
 ```
 
->Possibilité de partager rapidement les ressources à parir de sendmail via os mac et linux
-Le script a ses limites et ne peut pas générer des sites trop gourmands en ressources.
+
+>Le script a ses limites et ne peut pas générer des sites trop gourmands en ressources.
 ## Contribution
 Les demandes de contributions sont les bienvenues.
 

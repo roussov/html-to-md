@@ -1,6 +1,6 @@
 
-# News!
-Extraire les données d'un site  quelconque et d'envoyer le résultat sous forme de courrier au destinataire de son choix...
+# HTML to Markdown!
+Extraire les données d'un site afin d'obtenir le code en Markdown sous forme de fichier en sortie
 
 
 ## Installation
@@ -18,16 +18,16 @@ chmod +x start.sh
 python3 news.py
 ```
 ## Documentation
->Générateur de fichier Markdown à partir d'un URL de ce format  "https://example.com" 
-Obtention de la totalité du site dans le terminal 
+>Le format accepté "https://example.com" 
+Obtention de la totalité de la page demandée dans le terminal 
 Si pour des raisons pratiques vous préférez lancer le code sans installation:
 
 ```
-python3 news.py
+python3 html-to-md.py
 ```
 ou 
 ```
-python news.py
+python html-to-md.py
 ```
 
 
